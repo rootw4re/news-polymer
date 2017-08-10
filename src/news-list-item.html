@@ -109,30 +109,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     </style>
-<!-- I am shitting this very good code -->
-<!-- <paper-carousel items="1" dotText="false">
-  <img src="[[item.imageUrl]]" draggable="false"/>
-  <img src="https://unsplash.it/800/500/?image=250" draggable="false"/>
-  <img src="https://unsplash.it/800/500/?image=399" draggable="false"/>
-  <img src="https://unsplash.it/800/500/?image=146" draggable="false"/>
-  <img src="https://unsplash.it/800/500/?image=248" draggable="false"/>
-</paper-carousel> -->
 
-
-<!-- finally i finished it -->
-
-
-<a href$="[[item.href]]">
-  <news-img src="[[item.imageUrl]]" alt="[[item.headline]]"></news-img>
-  <div class="headline">
-    <div class="category" hidden$="[[!item.category]]">[[item.category]]</div>
-    <h2>[[item.headline]]</h2>
-    <div class="details">
-      <div class="time-ago">[[item.timeAgo]]</div>
-      <div class="author">[[item.author]]</div>
-    </div>
-  </div>
-</a>
+      <a href$="[[item.href]]">
+        <news-img src="[[item.imageUrl]]" alt="[[item.headline]]"></news-img>
+        <div class="headline">
+          <div class="category" hidden$="[[!item.category]]">[[item.category]]</div>
+          <h2>[[item.headline]]</h2>
+          <div class="details">
+            <div class="time-ago">[[item.timeAgo]]</div>
+            <div class="author">[[item.author]]</div>
+          </div>
+        </div>
+      </a>
 
 
 
