@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/paper-carousel/paper-carousel.html">
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html">
 
 <link rel="import" href="news-img.html">
 
@@ -212,18 +213,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .gradient:before {
         /* fallback */
-        background-color: #1e8449;
+        background-color: black;
         background: url(images/linear_bg_2.png);
         background-repeat: repeat-x;
         /* Safari 4-5, Chrome 1-9 */
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1e8449), to(#f5f5f5));
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(black), to(#f5f5f5));
         /* Safari 5.1, Chrome 10+ */
-        background: -webkit-linear-gradient(top, #f5f5f5, #1e8449);
+        background: -webkit-linear-gradient(top, #f5f5f5, black);
         /* Firefox 3.6+ */
-        background: -moz-linear-gradient(top, #f5f5f5, #1e8449);
-        /* IE 10 */ background: -ms-linear-gradient(top, #f5f5f5, #1e8449);
+        background: -moz-linear-gradient(top, #f5f5f5, black);
+        /* IE 10 */ background: -ms-linear-gradient(top, #f5f5f5, black);
         /* Opera 11.10+ */
-        background: -o-linear-gradient(top, #f5f5f5, #1e8449);
+        background: -o-linear-gradient(top, #f5f5f5, black);
       }
 
 
@@ -234,8 +235,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     </style>
-        <paper-carousel class="carousel"items="1" dotText="false">
-	<div class="carousel overlay gradient">
+        <paper-carousel class="carousel overlay gradient"items="1" dotText="false">
           <a href$="[[item.href]]">
             <div class="img-container">
               <news-img alt="[[item.headline]]" src="[[item.imageUrl]]" placeholder-src="[[item.placeholder]]"></news-img>
@@ -251,9 +251,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <p>[[item.summary]]</p>
             </div>
           </a>
-	</div>
 
-	<div class="carousel overlay gradient">
           <a href$="[[item.href]]">
             <div class="img-container">
               <news-img alt="[[item.headline]]" src="[[item.imageUrl]]" placeholder-src="[[item.placeholder]]"></news-img>
@@ -269,9 +267,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <p>[[item.summary]]</p>
             </div>
           </a>
-	</div>
 
-	<div class="carousel overlay gradient">
           <a href$="[[item.href]]">
             <div class="img-container">
               <news-img alt="[[item.headline]]" src="[[item.imageUrl]]" placeholder-src="[[item.placeholder]]"></news-img>
@@ -287,7 +283,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <p>[[item.summary]]</p>
             </div>
           </a>
-	</div>
+
         </paper-carousel>
 
   </template>
