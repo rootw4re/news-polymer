@@ -14,6 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 
+<link rel="import" href="news-footer.html">
 <link rel="import" href="news-data.html">
 <link rel="import" href="news-nav.html">
 
@@ -62,6 +63,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         left: 0;
         padding-bottom: 24px;
         text-align: center;
+	background-color: blue;
       }
 
       footer a {
@@ -146,9 +148,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </iron-pages>
 
-    <footer>
-      <a href="https://www.polymer-project.org/1.0/toolbox/">Made by Polymer</a>
-    </footer>
+
+    <news-header
+        app-title="[[appTitle]]"
+        page="[[page]]"
+        categories="[[categories]]"
+        category="[[category]]"
+        small-screen="[[_smallScreen]]"
+        drawer-opened="{{_drawerOpened}}">
+      <content></content>
+    </news-header>
+
+
+
+    <news-footer
+	app-title="[[appTitle]]"
+        page="[[page]]"
+        categories="[[categories]]"
+        category="[[category]]"
+        small-screen="[[_smallScreen]]"
+        drawer-opened="{{_drawerOpened}}">
+	<content></content>
+    </news-footer>
 
   </template>
 
