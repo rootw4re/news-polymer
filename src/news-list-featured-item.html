@@ -78,6 +78,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-size: 16px;
       }
 
+
       /* mobile and desktop small */
       @media (max-width: 1309px) {
         a {
@@ -87,9 +88,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
         .carousel {
-          width: 1150px;
-          min-width: auto;
-          max-width: 1300px;
+          width: 650px;
+          min-width: 200;
+          max-width: 1200px;
         }
 
         :host-context(.fixed-viewport-height) a {
@@ -155,8 +156,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           height: 50vmax;
         }
         .carousel {
-          width: 1100;
-          min-width: 800;
+          width: 1000px;
+          min-width: 800px;
           max-width: 1250px;
         }
       }
@@ -234,8 +235,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     </style>
-        <paper-carousel class="carousel"items="1" dotText="false">
-	<div class="carousel overlay gradient">
+        <paper-carousel class="carousel gradient overlay" items="1" dotText="false">
           <a href$="[[item.href]]">
             <div class="img-container">
               <news-img alt="[[item.headline]]" src="[[item.imageUrl]]" placeholder-src="[[item.placeholder]]"></news-img>
@@ -251,9 +251,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <p>[[item.summary]]</p>
             </div>
           </a>
-	</div>
 
-	<div class="carousel overlay gradient">
           <a href$="[[item.href]]">
             <div class="img-container">
               <news-img alt="[[item.headline]]" src="[[item.imageUrl]]" placeholder-src="[[item.placeholder]]"></news-img>
@@ -269,9 +267,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <p>[[item.summary]]</p>
             </div>
           </a>
-	</div>
 
-	<div class="carousel overlay gradient">
           <a href$="[[item.href]]">
             <div class="img-container">
               <news-img alt="[[item.headline]]" src="[[item.imageUrl]]" placeholder-src="[[item.placeholder]]"></news-img>
@@ -287,7 +283,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <p>[[item.summary]]</p>
             </div>
           </a>
-	</div>
         </paper-carousel>
 
   </template>

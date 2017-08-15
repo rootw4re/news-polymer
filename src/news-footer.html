@@ -14,6 +14,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 
 <link rel="import" href="./news-social-media.html">
+<link rel="import" href="./news-copyright.html">
+<link rel="import" href="./news-barra.html">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.7/webcomponents-lite.min.js"></script>
 
@@ -64,14 +66,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
       .drawer-list {
-        margin-top: 30px;
-	margin-bottom: 40px;
+        margin-top: 40px;
+	margin-bottom: 30px;
+	font-size: 10px;
       }
 
       .drawer-list a {
         display: block;
-        padding: 0 10px;
-        line-height: 22px;
+        padding: 0 5px;
+        line-height: 15px;
         text-decoration: none;
         color: white;
 	opacity: 0.75;
@@ -93,10 +96,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-overflow: ellipsis;
         overflow: hidden;
         margin: 0 16px;
-      }
-
-      .item {
-	border-top: 1px solid white;
       }
 
 
@@ -125,15 +124,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
+	<news-barra></news-barra>
+
   <ul class="app-grid inline-block-center">
-    <li class="item">
+    <li class="centering">
 	<iron-selector role="navigation" class="drawer-list" selected="[[category.name]]" attr-for-selected="name">
         <template is="dom-repeat" items="[[categories]]" as="category" initial-count="9">
           <a name="[[category.name]]" href="/list/[[category.name]]">[[category.title]]</a>
         </template>
       </iron-selector>
     </li>
-    <li >
+    <li class="centering">
 	<h3>
 		<a  href="/" aria-label$="[[_computeAppHomeLabel(appTitle)]]">[[appTitle]]</a>
 	</h3>
@@ -145,6 +146,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	<news-social-media></news-social-media>
     </li>
   </ul>	
+	<news-copyright>
+	</news-copyright>
 
 	
 

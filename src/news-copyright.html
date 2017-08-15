@@ -9,12 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.7/webcomponents-lite.min.js"></script>
-
-
-<dom-module id="news-social-media">
+<dom-module id="news-copyright">
 
   <template>
 
@@ -22,54 +18,74 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
     :host {
-
+        position: absolute;
+        right: 0;
+        left: 0;
+	background-color: #182119;
+	width: 100%;
+	font-size: 10px;
+	color: white;
     }
-    a {
-	text-decoration: none;
-	padding: 0 2% 0 2%;
-    }
-
 
     .inline-block-center {
   	text-align: center;
+	
      }
 
+    .centering {
+	margin-top: 5px;
+	margin-bottom: 10px;
+    }
+    
+    a{
+	color: white;
+	opacity: 0.85;
+	text-decoration: none;
+    }
+    a:hover{
+	color: white;
+	text-decoration: underline;
+	opacity: 1;
+    }
 
       /* mobile */
       @media (max-width: 767px) {
-	
+	.centering {
+		margin-top: 5px;
+		margin-bottom: 5px;
+    	}
       }
 
       /* desktop */
       @media (min-width: 768px) {
-	
+	.centering {
+		margin-top: 6px;
+		margin-bottom: 5px;
+    	}
 
       }
 
     </style>
-  <div style="margin-top: 15px">
-	<a class="" href="">
-		<social-media-icons icon="facebook" size="30"></social-media-icons>
-	</a>
-	<a class="" href="">	
-		<social-media-icons icon="youtube" size="30"></social-media-icons>
-	</a>
-	<a class="" href="">
-		<social-media-icons icon="twitter" size="30"></social-media-icons>
-	</a>
-	<a class="" href="">
-		<social-media-icons icon="googleplus" size="30"></social-media-icons>
-	</a>
-  </div>
-
+	<div class="inline-block-center centering">
+  Made by <a href="">[[developer]]</a> 2017.
+	</div>
 	
 
   </template>
 
   <script>
-    Polymer({
+Polymer({
 
-      is: 'news-social-media'
+      is: 'news-copyright',
+
+      properties: {
+
+        developer: {
+          type: String,
+          value: 'rootware'
+        }
+   }
+
 });
 
   </script>
