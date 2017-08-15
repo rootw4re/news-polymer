@@ -1,0 +1,196 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
+<link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
+<link rel="import" href="./news-social-media.html">
+<link rel="import" href="./news-copyright.html">
+<link rel="import" href="./news-barra.html">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.7/webcomponents-lite.min.js"></script>
+
+
+<dom-module id="news-footer">
+
+  <template>
+
+    <style include="app-grid-style">
+
+
+    :host {
+      --app-grid-columns: 3;
+      --app-grid-item-height: 100px;
+        position: absolute;
+        right: 0;
+        left: 0;
+	background-color: black;
+	width: 100%;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      
+    }
+
+    .inline-block-center {
+  	text-align: center;
+	
+     }
+
+    .centering {
+	margin-top: 30px;
+    }
+    
+    h3 > a{
+	font-weight: bold;
+	color: white;
+	opacity: 0.75;
+	text-decoration: none;
+    }
+    h3 > a:hover{
+	font-weight: bold;
+	color: white;
+	text-decoration: underline;
+	opacity: 1;
+    }
+
+      .drawer-list {
+        margin-top: 40px;
+	margin-bottom: 30px;
+	font-size: 10px;
+      }
+
+      .drawer-list a {
+        display: block;
+        padding: 0 5px;
+        line-height: 15px;
+        text-decoration: none;
+        color: white;
+	opacity: 0.75;
+      }
+
+      .drawer-list a.iron-selected {
+        font-weight: bold;
+	
+      }
+      .drawer-list a:hover {
+        color: white;
+	opacity: 1;
+      }
+      
+     .date-line {
+        text-align: center;
+        font-size: 11px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin: 0 16px;
+      }
+
+
+      /* mobile */
+      @media (max-width: 767px) {
+	.date-line {
+          padding: 6px 0;
+          border-top: var(--app-transparent-border-style);
+          border-bottom: var(--app-transparent-border-style);
+        }
+	.centering {
+		margin-top: 10px;
+    	}
+      }
+
+      /* desktop */
+      @media (min-width: 768px) {
+	.date-line {
+          padding: 4px 0 14px;
+        }
+	.centering {
+		margin-top: 25px;
+    	}
+
+      }
+
+    </style>
+
+	<news-barra></news-barra>
+
+  <ul class="app-grid inline-block-center">
+    <li class="centering">
+	<iron-selector role="navigation" class="drawer-list" selected="[[category.name]]" attr-for-selected="name">
+        <template is="dom-repeat" items="[[categories]]" as="category" initial-count="9">
+          <a name="[[category.name]]" href="/list/[[category.name]]">[[category.title]]</a>
+        </template>
+      </iron-selector>
+    </li>
+    <li class="centering">
+	<h3>
+		<a  href="/" aria-label$="[[_computeAppHomeLabel(appTitle)]]">[[appTitle]]</a>
+	</h3>
+      <div class="date-line" role="heading">
+        [[category.title]] <span aria-hidden="true">&nbsp;&middot;&nbsp;</span> [[_currentTime()]]
+      </div>
+    </li>
+    <li class="centering">
+	<news-social-media></news-social-media>
+    </li>
+  </ul>	
+	<news-copyright>
+	</news-copyright>
+
+	
+
+  </template>
+
+  <script>
+Polymer({
+
+      is: 'news-footer',
+
+      properties: {
+
+        appTitle: String,
+
+        page: {
+          type: String,
+          reflectToAttribute: true
+        },
+
+        categories: Array,
+
+        category: Object
+   },
+
+      _currentTime: function() {
+        var monthNames = [
+          'January', 'February', 'March',
+          'April', 'May', 'June', 'July',
+          'August', 'September', 'October',
+          'November', 'December'
+        ];
+
+        var date = new Date();
+
+        return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+      },
+
+      _computeAppHomeLabel: function(appTitle) {
+        return appTitle + ' Home';
+      }
+
+});
+
+  </script>
+
+</dom-module>

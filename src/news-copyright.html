@@ -1,0 +1,93 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="news-copyright">
+
+  <template>
+
+    <style>
+
+
+    :host {
+        position: absolute;
+        right: 0;
+        left: 0;
+	background-color: #182119;
+	width: 100%;
+	font-size: 10px;
+	color: white;
+    }
+
+    .inline-block-center {
+  	text-align: center;
+	
+     }
+
+    .centering {
+	margin-top: 5px;
+	margin-bottom: 10px;
+    }
+    
+    a{
+	color: white;
+	opacity: 0.85;
+	text-decoration: none;
+    }
+    a:hover{
+	color: white;
+	text-decoration: underline;
+	opacity: 1;
+    }
+
+      /* mobile */
+      @media (max-width: 767px) {
+	.centering {
+		margin-top: 5px;
+		margin-bottom: 5px;
+    	}
+      }
+
+      /* desktop */
+      @media (min-width: 768px) {
+	.centering {
+		margin-top: 6px;
+		margin-bottom: 5px;
+    	}
+
+      }
+
+    </style>
+	<div class="inline-block-center centering">
+  Made by <a href="">[[developer]]</a> 2017.
+	</div>
+	
+
+  </template>
+
+  <script>
+Polymer({
+
+      is: 'news-copyright',
+
+      properties: {
+
+        developer: {
+          type: String,
+          value: 'rootware'
+        }
+   }
+
+});
+
+  </script>
+
+</dom-module>
